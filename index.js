@@ -37,7 +37,7 @@ mongoose
   });
 
 const port = process.env.PORT || 5035;
-app.get("/", (res, req) => {
+app.get("/", (req, res) => {
   res.statusCode(200).json({
     message: "Welcome to iMoney api v1.0",
     db_status: mongoose.connection.readyState,
@@ -45,6 +45,6 @@ app.get("/", (res, req) => {
   });
 });
 
-app.listen(port, (res, req) => {
+app.listen(port, (req, res) => {
   console.log(`Server in running on port ${port}...`);
 });
